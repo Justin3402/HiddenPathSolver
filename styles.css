@@ -1,5 +1,18 @@
-body {
+/* body {
 	margin: 0;
 	background: gray;
+	text-align: center;
+} */
+
+h1 {
+	color: black;
+	background-color: slategrey;
+}
+
+p {
+	color: darkslategrey;
+	font-size: 20px;
+	text-decoration: underline;
+	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
 }
