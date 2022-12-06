@@ -18,5 +18,11 @@
 	<p>Text Text Text Text Text Text Text Text Text Text Text</p>
 	<p>Text Text Text Text Text Text Text Text Text Text Text</p>
 	<p>Text Text Text Text Text Text Text Text Text Text Text</p>
+
+	<h1>Run my Python files</h1>
+	<?PHP
+	echo shell_exec("python test.py 'parameter1'");
+	?>
+	
 </body>
 </html>
