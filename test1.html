@@ -28,9 +28,12 @@
 	<!-- <py-repl></py-repl> -->
 	<!-- <input type="text" id="input_text" class="py-input">
 	<button type="submit" id="start_button" class="py-button" py-click="start()"> Start </button> -->
-	<button id="click-btn" class="bg-blue-500 text-white" pys-onClick="handle_click">Click</button>
-	<div id="output"></div>
-	<py-script src="./main.py"></py-script>
+	<form action="main.py" method="post">
+		<input type="submit" name="" id="" value="Submit the form">
+		<!-- <button type="submit" pys-onClick="handle_click">Click</button> -->
+		<div id="output"></div>
+		<py-script src="./main.py"></py-script>
+	</form>
 	<br>
 
 </body>

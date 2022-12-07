@@ -7,4 +7,4 @@ def start():
 def handle_click(e):
     print("you clicked the button")
 
-# greetings('you')
+greetings('you')

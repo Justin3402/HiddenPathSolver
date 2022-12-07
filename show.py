@@ -1,18 +1,20 @@
-import cgi, os
+print("Running Python")
 
-print('content-type:text/html\r\n\r\n')
+# import cgi, os
 
-form = cgi.FieldStorage()
-pn = str(form.getvalue("pname"))
-des = str(form.getvalue("des"))
-fle = form['filename']
+# print('content-type:text/html\r\n\r\n')
 
-fn = os.path.basename(fle.filename)
-open("C:/Users/Justin/Documents/GitHub/HiddenPathSolver/temp" + fn, "wb").write(fle.file.read())
+# form = cgi.FieldStorage()
+# pn = str(form.getvalue("pname"))
+# des = str(form.getvalue("des"))
+# fle = form['filename']
 
-print('<html>')
-print('<body><center>')
-print('<h1>Product Name\n(%s)</h1>'%pn)
-print('<img src=temp/%s>'%fn)
-print('<h2>%s</h2>'%des)
-print('</center></body></html>')
+# fn = os.path.basename(fle.filename)
+# open("C:/Users/Justin/Documents/GitHub/HiddenPathSolver/temp" + fn, "wb").write(fle.file.read())
+
+# print('<html>')
+# print('<body><center>')
+# print('<h1>Product Name\n(%s)</h1>'%pn)
+# print('<img src=temp/%s>'%fn)
+# print('<h2>%s</h2>'%des)
+# print('</center></body></html>')
