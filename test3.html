@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test 1</title>
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+	<link rel="shortcut icon" type="image/x-icon" href="icon16x16.ico">
+
+    <style>
+        #txt{
+            width: 737px;
+            height: 50px;
+            font-size: 25px;
+        }
+        #dd{
+            color: white;
+            background-color: black;
+            padding-top: 10px;
+            height: 75px;
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+		<a href="index.html">Home</a>
+		<a href="test1.html">Test 1</a>
+		<a href="test2.html">Test 2</a>
+		<a href="test3.html">Test 3</a>
+	</nav>
+	<br>
+
+    <center>
+    <div id="dd">
+    <h1>Product registration</h1></div>
+    <form enctype="multipart/form-data" action="show.py" method="post">
+        <input id="txt" type="text" name="pname" placeholder="Product name"/><br><br>
+        <input id="txt" type="file" name="filename" placeholder="image"/><br><br>
+        <textarea name="des" id="txt" cols="100" rows="20"></textarea><br><br>
+        <input id="txt" type="submit" name="sub" value="Register the product">
+    </form></center>
+</body>
