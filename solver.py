@@ -178,13 +178,32 @@ def solve(pathData):
         pyscript.write('solveStatus', 'The board could not be solved :(')
 
 
+def getData():
+    for row in range(height):
+        for column in range(width):
+            grid[row][column] = Element(f'i{4*row+column+1}').element.value
+    # newNumber = Element("i1").element.value
+    # grid[0][0] = newNumber
+    # pyscript.write('test1', newNumber)
+    # newNumber = Element("i2").element.value
+    # grid[0][1] = newNumber
+    # pyscript.write('test2', newNumber)
+    # newNumber = Element("i3").element.value
+    # grid[0][2] = newNumber
+    # pyscript.write('test3', newNumber)
+    # newNumber = Element("i4").element.value
+    # grid[0][3] = newNumber
+    # pyscript.write('test4', newNumber)
+
+
 def handle_click(e):
     # pyscript.write("output", "you clicked the button")
+    getData()
     inputTable = ([10, 4, 10, 6], [10, 4, 5, 1], [5, 6, 1, 2], [7, 5, 7, 5])
     targetSum = 44
 
-    pyscript.write('inputGrid', f'The starting grid is:\r\n {display_grid(inputTable, False)}')
+    pyscript.write('inputGrid', f'The starting grid is:\r\n {display_grid(grid, False)}')
 
     # pathStartData = [rowStart, colStart, rowEnd, colEnd, targetSum, inputTable]
-    pathStartData = [2, 0, 3, 3, targetSum, inputTable]
+    pathStartData = [2, 0, 3, 3, targetSum, grid]
     solve(pathStartData)

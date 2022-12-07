@@ -25,70 +25,97 @@
     <h1>Hidden Path Solver</h1>
 
     <table>
+        <label for="">Input board:</label>
         <tr>
             <td><div class="content">
-                <input type="number" name="" id="i1" min="0">
+                <input type="number" name="" id="i1" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i2" min="0">
+                <input type="number" name="" id="i2" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i3" min="0">
+                <input type="number" name="" id="i3" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i4" min="0">
+                <input type="number" name="" id="i4" min="0" class="box">
             </div></td>
         </tr>
         <tr>
             <td><div class="content">
-                <input type="number" name="" id="i5" min="0">
+                <input type="number" name="" id="i5" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i6" min="0">
+                <input type="number" name="" id="i6" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i7" min="0">
+                <input type="number" name="" id="i7" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i8" min="0">
-            </div></td>
-        </tr>
-        <tr>
-            <td><div class="content">
-                <input type="number" name="" id="i9" min="0">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i10" min="0">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i11" min="0">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i12" min="0">
+                <input type="number" name="" id="i8" min="0" class="box">
             </div></td>
         </tr>
         <tr>
             <td><div class="content">
-                <input type="number" name="" id="i13" min="0">
+                <input type="number" name="" id="i9" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i14" min="0">
+                <input type="number" name="" id="i10" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i15" min="0">
+                <input type="number" name="" id="i11" min="0" class="box">
             </div></td>
             <td><div class="content">
-                <input type="number" name="" id="i16" min="0">
+                <input type="number" name="" id="i12" min="0" class="box">
+            </div></td>
+        </tr>
+        <tr>
+            <td><div class="content">
+                <input type="number" name="" id="i13" min="0" class="box">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i14" min="0" class="box">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i15" min="0" class="box">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i16" min="0" class="box">
             </div></td>
         </tr>
     </table>
     <br>
+
+    <label for="startRow">Start row</label><br>
+    <input type="range" value="1" name="" id="startRow" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
+    <output>1</output><br>
+
+    <label for="startCol">Start column</label><br>
+    <input type="range" value="1" name="" id="startCol" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
+    <output>1</output><br>
+
+    <label for="endRow">End row</label><br>
+    <input type="range" value="4" name="" id="endRow" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
+    <output>4</output><br>
+
+    <label for="endCol">End column</label><br>
+    <input type="range" value="4" name="" id="endCol" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
+    <output>4</output><br>
+    <br>
+
+    <input type="number" name="" id="targetSum" placeholder="Sum">
+    <br><br>
+
+    <button id="click-btn" class="bg-blue-500 text-white" pys-onClick="handle_click">Start solving</button>
+    <py-script src="./solver.py"></py-script>
+    <br>
+
     <table>
+        <label for="">Output path:</label>
         <tr>
-            <td id="o1" class="content">1</td>
-            <td id="o2" class="content">2</td>
-            <td id="o3" class="content">3</td>
-            <td id="o4" class="content">4</td>
+            <td id="o1" class="content"></td>
+            <td id="o2" class="content"></td>
+            <td id="o3" class="content"></td>
+            <td id="o4" class="content"></td>
         </tr>
         <tr>
             <td id="o5"><div class="content"></div></td>
@@ -97,10 +124,10 @@
             <td id="o8"><div class="content"></div></td>
         </tr>
         <tr>
-            <td><div id="o9" class="content">9</div></td>
-            <td><div id="o10" class="content">10</div></td>
-            <td><div id="o11" class="content">11</div></td>
-            <td><div id="o12" class="content">12</div></td>
+            <td><div id="o9" class="content"></div></td>
+            <td><div id="o10" class="content"></div></td>
+            <td><div id="o11" class="content"></div></td>
+            <td><div id="o12" class="content"></div></td>
         </tr>
         <tr>
             <td id="o13"><div class="content"></div></td>
@@ -109,22 +136,7 @@
             <td id="o16"><div class="content"></div></td>
         </tr>
     </table>
-
-    <table>
-        <tr>
-            <th>A<br /><br /></th>
-            <th>B</th>
-            <th>C</th>
-        </tr>
-        <tr>
-            <td>1<br /><br /></td>
-            <td>2</td>
-            <td>3</td>
-        </tr>
-    </table>
-
-    <button id="click-btn" class="bg-blue-500 text-white" pys-onClick="handle_click">Start solving</button>
-    <py-script src="./solver.py"></py-script>
+    <br>
 
     <div id="inputGrid" class="grids"></div>
     <div id="solveStatus"></div>
