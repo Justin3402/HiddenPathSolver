@@ -1,0 +1,306 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hidden Path Solver</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="icon16x16.ico">
+	<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - numpy
+        - utils
+    </py-env>
+</head>
+<body>
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="test1.html">Test 1</a>
+		<a href="test2.html">Test 2</a>
+		<a href="test3.html">Test 3</a>
+		<a href="todo.html">ToDo app</a>
+	</nav>
+	<br>
+
+    <h1>Hidden Path Solver</h1>
+
+    <table>
+        <tr>
+            <td><div class="content">
+                <input type="number" name="" id="i1" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i2" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i3" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i4" min="0">
+            </div></td>
+        </tr>
+        <tr>
+            <td><div class="content">
+                <input type="number" name="" id="i5" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i6" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i7" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i8" min="0">
+            </div></td>
+        </tr>
+        <tr>
+            <td><div class="content">
+                <input type="number" name="" id="i9" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i10" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i11" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i12" min="0">
+            </div></td>
+        </tr>
+        <tr>
+            <td><div class="content">
+                <input type="number" name="" id="i13" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i14" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i15" min="0">
+            </div></td>
+            <td><div class="content">
+                <input type="number" name="" id="i16" min="0">
+            </div></td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td id="o1" class="content">1</td>
+            <td id="o2" class="content">2</td>
+            <td id="o3" class="content">3</td>
+            <td id="o4" class="content">4</td>
+        </tr>
+        <tr>
+            <td id="o5"><div class="content"></div></td>
+            <td id="o6"><div class="content"></div></td>
+            <td id="o7"><div class="content"></div></td>
+            <td id="o8"><div class="content"></div></td>
+        </tr>
+        <tr>
+            <td><div id="o9" class="content">9</div></td>
+            <td><div id="o10" class="content">10</div></td>
+            <td><div id="o11" class="content">11</div></td>
+            <td><div id="o12" class="content">12</div></td>
+        </tr>
+        <tr>
+            <td id="o13"><div class="content"></div></td>
+            <td id="o14"><div class="content"></div></td>
+            <td id="o15"><div class="content"></div></td>
+            <td id="o16"><div class="content"></div></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>A<br /><br /></th>
+            <th>B</th>
+            <th>C</th>
+        </tr>
+        <tr>
+            <td>1<br /><br /></td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <button id="click-btn" class="bg-blue-500 text-white" pys-onClick="handle_click">Start solving</button>
+    <py-script src="./solver.py"></py-script>
+
+    <div id="inputGrid" class="grids"></div>
+    <div id="solveStatus"></div>
+    <div id="finalGrid" class="grids"></div>
+
+    
+
+    <!-- <py-script>
+import numpy as np
+
+height = 4
+width = 4
+iterations = 0
+is_solved = 0
+
+left = 0
+right = 1
+down = 2
+up = 3
+
+row_start = 2
+col_start = 0
+row_end = 3
+col_end = 3
+target = 0
+
+previous_row_start = 0
+previous_col_start = 0
+previous_row_end = 3
+previous_col_end = 3
+
+row_pos = row_start
+col_pos = col_start
+
+path = np.zeros((height, width))
+grid = np.zeros((height, width))
+
+
+# Display the grid in the terminal
+def display_grid(matrix, is_path):
+    data = ""
+    for row in range(height):
+        for column in range(width):
+            if column == col_start and row == row_start and is_path:
+                data += f' {int(matrix[row][column])}*\t'
+            elif column == col_end and row == row_end and is_path:
+                data += f' {int(matrix[row][column])}!\t'
+            else:
+                data += f' {int(matrix[row][column])}\t'  # Do not display the start and the end characters
+        print(data)
+        data = ""
+
+
+# Check if the square is unoccupied by another part of the path
+def is_empty(row, col):
+    if path[row][col]:
+        return False
+    else:
+        return True
+
+
+# Check if the square is inside the grid
+def is_inside(row, col):
+    if row < 0 or row >= height:
+        return False
+    if col < 0 or col >= width:
+        return False
+    return True
+
+
+# Handling of the next move direction
+def move(board, direction):
+    global row_pos
+    global col_pos
+    row = board[0]
+    col = board[1]
+    row_des = row
+    col_des = col
+
+    if direction == left:
+        col_des = col - 1
+    elif direction == right:
+        col_des = col + 1
+    elif direction == down:
+        row_des = row + 1
+    elif direction == up:
+        row_des = row - 1
+
+    if is_inside(row_des, col_des):
+        if is_empty(row_des, col_des):
+            row_pos = row_des
+            col_pos = col_des
+            return True  # A surrounding box is available
+    return False  # No surrounding box available
+
+
+def solve_board(board):
+    global grid
+    global path
+    global target
+    global row_pos
+    global col_pos
+    global iterations
+
+    row = board[0]
+    col = board[1]
+    total = board[2]
+    step = board[3]
+
+    step = step + 1
+    path[row][col] = step
+    total = total + grid[row][col]
+    board = [row, col, total, step]
+    if total == target and row == row_end and col == col_end:
+        is_solved = 1
+        return True
+
+    for i in range(0, 4):
+        iterations = iterations + 1
+        if move(board, i):
+            new_board = [row_pos, col_pos, total, step]
+            if solve_board(new_board):
+                return True
+    path[row][col] = 0
+    return False  # No more move remaining
+
+
+def solve(pathData):
+    global grid
+    global path
+    global target
+    global row_pos
+    global col_pos
+    global row_start
+    global col_start
+    global row_end
+    global col_end
+    global iterations
+
+    row_start = pathData[0]
+    col_start = pathData[1]
+    row_end = pathData[2]
+    col_end = pathData[3]
+    target = pathData[4]
+    grid = pathData[5]
+
+    row_pos = row_start
+    col_pos = col_start
+
+    path = np.zeros((height, width))
+    board = [row_start, col_start, 0, 0]
+
+    iterations = 0
+    is_solved = 0
+
+    if solve_board(board):
+        txt = f'The board is solved! {iterations} iterations were needed.'
+        print(txt)
+        print('The path is:')
+        display_grid(path, False)
+    else:
+        print('The board is unsolved :(')
+
+
+inputTable = ([10, 4, 10, 6], [10, 4, 5, 1], [5, 6, 1, 2], [7, 5, 7, 5])
+targetSum = 44
+
+# print("Starting grid:")
+pyscript.write('start', f'The starting grid is:')
+display_grid(grid, True)
+print('_____________________')
+
+# pathStartData = [rowStart, colStart, rowEnd, colEnd, targetSum, inputTable]
+pathStartData = [2, 0, 3, 3, targetSum, inputTable]
+solve(pathStartData)
+
+    </py-script> -->
+</body>
+</html>

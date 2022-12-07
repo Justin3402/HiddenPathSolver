@@ -4,15 +4,52 @@
 	text-align: center;
 } */
 
-h1 {
+/* h1 {
 	color: black;
 	background-color: slategrey;
-}
+} */
 
-p {
+/* p {
 	color: darkslategrey;
 	font-size: 20px;
 	text-decoration: underline;
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
+} */
+.grids {
+	white-space: pre-wrap;
+}
+table {
+	width: 240px;
+}
+td {
+	/* width: 25%; */
+	position: relative;
+	background: slategrey;
+	text-align: center;
+	vertical-align: middle;
+}
+td:after {
+	content: '';
+	display: block;
+	margin-top: 100%;
+}
+td .content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	vertical-align: middle;
+}
+input[type='number']{
+    width: 60px;
+	height: 60px;
+	text-align: center;
+	font-size: 25px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
