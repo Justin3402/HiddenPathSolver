@@ -86,23 +86,24 @@
     <br>
 
     <label for="startRow">Start row</label><br>
-    <input type="range" value="1" name="" id="startRow" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
-    <output>1</output><br>
+    <input type="range" value="0" name="" id="startRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+    <output>0</output><br>
 
     <label for="startCol">Start column</label><br>
-    <input type="range" value="1" name="" id="startCol" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
-    <output>1</output><br>
+    <input type="range" value="0" name="" id="startCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+    <output>0</output><br>
 
     <label for="endRow">End row</label><br>
-    <input type="range" value="4" name="" id="endRow" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
-    <output>4</output><br>
+    <input type="range" value="3" name="" id="endRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+    <output>3</output><br>
 
     <label for="endCol">End column</label><br>
-    <input type="range" value="4" name="" id="endCol" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
-    <output>4</output><br>
+    <input type="range" value="3" name="" id="endCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+    <output>3</output><br>
     <br>
 
-    <input type="number" name="" id="targetSum" placeholder="Sum">
+    <label for="targetSum">Sum</label><br>
+    <input type="number" name="" id="targetSum" placeholder="" class="target">
     <br><br>
 
     <button id="click-btn" class="bg-blue-500 text-white" pys-onClick="handle_click">Start solving</button>
