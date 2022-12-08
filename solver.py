@@ -35,7 +35,7 @@ row_pos = row_start
 col_pos = col_start
 
 path = np.zeros((height, width), dtype=int)
-grid = np.zeros((height, width))
+grid = np.zeros((height, width), dtype=int)
 
 
 # Display the grid in the terminal
@@ -103,6 +103,7 @@ def solve_board(board):
     global row_pos
     global col_pos
     global iterations
+    global is_solved
 
     row = board[0]
     col = board[1]
@@ -150,23 +151,65 @@ def solve(pathData):
     row_pos = row_start
     col_pos = col_start
 
-    path = np.zeros((height, width))
+    path = np.zeros((height, width), dtype=int)
     board = [row_start, col_start, 0, 0]
 
     iterations = 0
     is_solved = 0
 
+    pyscript.write('solveStatus', 'Solving...')
+
     if solve_board(board):
         pyscript.write('solveStatus', f'The board is solved! {iterations} iterations were needed.')
         pyscript.write('finalGrid', f'The path is:\r\n {display_grid(path, False)}')
+        pyscript.write('o1', int(path[0][0]))
+        pyscript.write('o2', int(path[0][1]))
+        pyscript.write('o3', int(path[0][2]))
+        pyscript.write('o4', int(path[0][3]))
+        pyscript.write('o5', int(path[1][0]))
+        pyscript.write('o6', int(path[1][1]))
+        pyscript.write('o7', int(path[1][2]))
+        pyscript.write('o8', int(path[1][3]))
+        pyscript.write('o9', int(path[2][0]))
+        pyscript.write('o10', int(path[2][1]))
+        pyscript.write('o11', int(path[2][2]))
+        pyscript.write('o12', int(path[2][3]))
+        pyscript.write('o13', int(path[3][0]))
+        pyscript.write('o14', int(path[3][1]))
+        pyscript.write('o15', int(path[3][2]))
+        pyscript.write('o16', int(path[3][3]))
     else:
         pyscript.write('solveStatus', 'The board could not be solved :(')
 
 
+def getData():
+    global height
+    global width
+    global grid
+    global path
+    global iterations
+    global is_solved
+
+    table = np.zeros((height, width), dtype=int)
+
+    for row in range(height):
+        for column in range(width):
+            table[row][column] = Element(f'i{4*row+column+1}').element.value
+    
+    pyscript.write('solveStatus', 'Getting the parameters')
+    rowStart = int(Element('startRow').element.value)
+    colStart = int(Element('startCol').element.value)
+    rowEnd = int(Element('endRow').element.value)
+    colEnd = int(Element('endCol').element.value)
+    targetValue = int(Element('targetSum').element.value)
+
+    pathData = [rowStart, colStart, rowEnd, colEnd, targetValue, table]
+    return pathData
+
+
 def handle_click(e):
-    inputTable = ([10, 4, 10, 6], [10, 4, 5, 1], [5, 6, 1, 2], [7, 5, 7, 5])
-    targetSum = 44
-    pathStartData = [2, 0, 3, 3, targetSum, inputTable]
+    pathStartData = getData()
+    pyscript.write('solveStatus', 'Data acquired!')
     solve(pathStartData)
 
 

@@ -20,91 +20,92 @@
 		<a href="test3.html">Test 3</a>
 		<a href="todo.html">ToDo app</a>
 	</nav>
-	<br>
 
     <h1>Hidden Path Solver</h1>
 
-    <table>
-        <label for="">Input board:</label>
-        <tr>
-            <td><div class="content">
-                <input type="number" name="" id="i1" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i2" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i3" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i4" min="0" class="box">
-            </div></td>
-        </tr>
-        <tr>
-            <td><div class="content">
-                <input type="number" name="" id="i5" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i6" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i7" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i8" min="0" class="box">
-            </div></td>
-        </tr>
-        <tr>
-            <td><div class="content">
-                <input type="number" name="" id="i9" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i10" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i11" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i12" min="0" class="box">
-            </div></td>
-        </tr>
-        <tr>
-            <td><div class="content">
-                <input type="number" name="" id="i13" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i14" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i15" min="0" class="box">
-            </div></td>
-            <td><div class="content">
-                <input type="number" name="" id="i16" min="0" class="box">
-            </div></td>
-        </tr>
-    </table>
-    <br>
+    <div class="row">
+        <div class="column">
+            <table>
+                <label for="">Input board:</label>
+                <tr>
+                    <td><div class="content">
+                        <input type="number" name="" id="i1" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i2" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i3" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i4" min="0" class="box">
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><div class="content">
+                        <input type="number" name="" id="i5" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i6" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i7" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i8" min="0" class="box">
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><div class="content">
+                        <input type="number" name="" id="i9" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i10" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i11" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i12" min="0" class="box">
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><div class="content">
+                        <input type="number" name="" id="i13" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i14" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i15" min="0" class="box">
+                    </div></td>
+                    <td><div class="content">
+                        <input type="number" name="" id="i16" min="0" class="box">
+                    </div></td>
+                </tr>
+            </table>
+        </div>
+        <div class="column" style="margin-top: 12px;">
+            <label for="startRow">Start row</label><br>
+            <input type="range" value="0" name="" id="startRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output><br>
 
-    <label for="startRow">Start row</label><br>
-    <input type="range" value="0" name="" id="startRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>0</output><br>
+            <label for="startCol">Start column</label><br>
+            <input type="range" value="0" name="" id="startCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output><br>
 
-    <label for="startCol">Start column</label><br>
-    <input type="range" value="0" name="" id="startCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>0</output><br>
+            <label for="endRow">End row</label><br>
+            <input type="range" value="3" name="" id="endRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+            <output>3</output><br>
 
-    <label for="endRow">End row</label><br>
-    <input type="range" value="3" name="" id="endRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>3</output><br>
+            <label for="endCol">End column</label><br>
+            <input type="range" value="3" name="" id="endCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+            <output>3</output><br>
 
-    <label for="endCol">End column</label><br>
-    <input type="range" value="3" name="" id="endCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>3</output><br>
-    <br>
-
-    <label for="targetSum">Sum</label><br>
-    <input type="number" name="" id="targetSum" placeholder="" class="target">
-    <br><br>
+            <label for="targetSum">Sum</label><br>
+            <input type="tel" name="" id="targetSum" placeholder="" class="target">
+        </div>
+    </div><br>
 
     <button id="click-btn" class="bg-blue-500 text-white" pys-onClick="handle_click">Start solving</button>
     <py-script src="./solver.py"></py-script>

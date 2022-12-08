@@ -16,6 +16,11 @@
 	font-family: 'Times New Roman', Times, serif;
 	text-align: center;
 } */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .grids {
 	white-space: pre-wrap;
 }
@@ -64,8 +69,13 @@ input[type='range']{
 	font-size: 20px;
 	vertical-align: middle;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.column {
+	float: left;
+	width: 280px;
+}
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
 }
