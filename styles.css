@@ -85,17 +85,14 @@ input::-webkit-inner-spin-button {
 table {
 	width: 240px;
 	border-collapse: collapse;
-	/* border-spacing: 0; */
 	border: 1px solid;
 	border-color: whitesmoke;
 }
 td {
 	/* width: 25%; */
 	position: relative;
-	/* background: slategrey; */
 	text-align: center;
 	vertical-align: middle;
-	/* border-width: 0; */
 	padding: 0;
 	background-color: #181A1B;
 	
@@ -111,44 +108,47 @@ td {
 .flex-container2 {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	align-items: flex-start;
 }
 .flex-item2 {
-	/* margin: 16px 16px; */
-	/* align-self: center; */
 	text-align: center;
 
 }
-/* Responsive layout - makes a one column layout instead of a two-column layout */
-@media (max-width: 800px) {
-	.flex-container {
+/* Responsive layout - makes a one column layout */
+/* @media (max-width: 500px) {
+	.flex-container1 {
 	  flex-direction: column;
+	  align-items: center;
 	}
-  }
+} */
+@media (pointer:none), (pointer:coarse) {
+	.flex-container1 {
+		flex-direction: column;
+		align-items: center;
+	}
+}
 .inputBox {
-	border-width: 1px;
-	border-style: solid;
-	border-color: whitesmoke;
+	border: 1px solid whitesmoke;
+	border-radius: none;
 	width: 60px;
 	height: 60px;
-	text-align: center;
 	color: whitesmoke;
+	text-align: center;
 	font-size: 28px;
 	background-color: #181A1B;
 }
-.inputBox:hover {
+/* .inputBox:hover {
 	background-color: #038857;
-}
+} */
 .outputBox {
-	border-width: 2px;
-	border-style: solid;
-	border-color: whitesmoke;
-	color: whitesmoke;
+	border: 2px solid whitesmoke;
+	border-radius: none;
 	width: 60px;
 	height: 60px;
+	color: whitesmoke;
 	text-align: center;
 	font-size: 28px;
+	background-color: #181A1B;
 }
 
 .parameters-box {
@@ -156,14 +156,6 @@ td {
 	/* border-radius: 4px; */
 	padding: 8px;
 }
-/* input[type='range'] {
-    vertical-align: middle;
-	width: 100px;
-	-webkit-appearance: none;
-	border: none;
-	margin: 0;
-	padding: 0;
-} */
 input[type=range] {
 	/* height: 25px; */
 	vertical-align: middle;
