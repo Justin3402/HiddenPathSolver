@@ -9,14 +9,12 @@
 	Accent color: rgb(0, 0, 80)
 */
 
-
 * {
 	box-sizing: border-box;
 }
 body {
 	margin: 0;
 	background-color: #181A1B;
-	/* text-align: center; */
 }
 
 h1 {
@@ -44,11 +42,9 @@ label {
 
 p {
 	color: whitesmoke;
-	/* font-size: 20px;
-	text-decoration: underline;
-	font-family: 'Times New Roman', Times, serif;
-	text-align: center; */
 }
+
+/* Hide the arrows in the number input boxes */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -249,7 +245,6 @@ input[type=range] {
   input[type=range]:focus::-ms-fill-upper {
 	background: #038857;
   }
-  
 
 .target {
 	width: 110px;
@@ -262,6 +257,7 @@ input[type=range] {
 	border-radius: 4px;
 	background-color: #181A1B;
 }
+
 .startButton {
 	width: 100%;
 	height: auto;
@@ -276,17 +272,6 @@ input[type=range] {
 	cursor: pointer;
 	padding: 2px 12px 6px 12px;
 }
-/* .startButton {
-	display: block;
-	width: 100%;
-	border: none;
-	background-color: #038857;
-	color: whitesmoke;
-	padding: 14px 28px;
-	font-size: 16px;
-	cursor: pointer;
-	text-align: center;
-} */
 .startButton:hover {
 	background-color: whitesmoke;
 	color: #181A1B;
