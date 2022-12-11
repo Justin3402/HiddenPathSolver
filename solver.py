@@ -199,8 +199,8 @@ def getData():
     pyscript.write('solveStatus', 'Getting the parameters')
     rowStart = int(Element('startRow').element.value)
     colStart = int(Element('startCol').element.value)
-    rowEnd = int(Element('endRow').element.value)
-    colEnd = int(Element('endCol').element.value)
+    rowEnd = 3  # int(Element('endRow').element.value)
+    colEnd = 3  # int(Element('endCol').element.value)
     targetValue = int(Element('targetSum').element.value)
 
     pathData = [rowStart, colStart, rowEnd, colEnd, targetValue, table]

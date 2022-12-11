@@ -13,7 +13,7 @@
     </py-env>
 </head>
 <body>
-	<nav>
+	<nav class="navbar">
 		<a href="index.html">Home</a>
 		<a href="test1.html">Test 1</a>
 		<a href="test2.html">Test 2</a>
@@ -23,90 +23,110 @@
 
     <h1>Hidden Path Solver</h1>
 
-    <table>
-        <label for="">Input board:</label>
-        <tr>
-            <td><input type="tel" name="" id="i1" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i2" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i3" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i4" min="0" class="inputBox"></td>
-        </tr>
-        <tr>
-            <td><input type="tel" name="" id="i5" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i6" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i7" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i8" min="0" class="inputBox"></td>
-        </tr>
-        <tr>
-            <td><input type="tel" name="" id="i9" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i10" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i11" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i12" min="0" class="inputBox"></td>
-        </tr>
-        <tr>
-            <td><input type="tel" name="" id="i13" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i14" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i15" min="0" class="inputBox"></td>
-            <td><input type="tel" name="" id="i16" min="0" class="inputBox"></td>
-        </tr>
-    </table>
+    <div class="flex-container1">
+        <div class="flex-item1">
+            <table id="inputTable">
+                <label for="inputTable">Input board:</label>
+                <tr>
+                    <td><input type="tel" name="" id="i1" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i2" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i3" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i4" min="0" class="inputBox"></td>
+                </tr>
+                <tr>
+                    <td><input type="tel" name="" id="i5" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i6" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i7" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i8" min="0" class="inputBox"></td>
+                </tr>
+                <tr>
+                    <td><input type="tel" name="" id="i9" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i10" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i11" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i12" min="0" class="inputBox"></td>
+                </tr>
+                <tr>
+                    <td><input type="tel" name="" id="i13" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i14" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i15" min="0" class="inputBox"></td>
+                    <td><input type="tel" name="" id="i16" min="0" class="inputBox"></td>
+                </tr>
+            </table>
+        </div>
 
+        <div  class="flex-item1" id="parameters">
+            <label for="parameters">Parameters</label>
+            <div class="flex-container2">
+                <div class="parameters-box">
+                    <div class="flex-item2">
+                        <label for="startRow">Start row</label><br>
+                        <input type="range" value="0" name="" id="startRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+                        <output class="sliderNumber">0</output><br>
+                    </div>
 
-    <label for="startRow">Start row</label><br>
-    <input type="range" value="0" name="" id="startRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>0</output><br>
+                    <div class="flex-item2">
+                        <label for="startCol">Start column</label><br>
+                        <input type="range" value="0" name="" id="startCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+                        <output class="sliderNumber">0</output><br>
+                    </div>
 
-    <label for="startCol">Start column</label><br>
-    <input type="range" value="0" name="" id="startCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>0</output><br>
+                    <!-- <label for="endRow">End row</label><br>
+                    <input type="range" value="3" name="" id="endRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+                    <output>3</output><br>
 
-    <label for="endRow">End row</label><br>
-    <input type="range" value="3" name="" id="endRow" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>3</output><br>
+                    <label for="endCol">End column</label><br>
+                    <input type="range" value="3" name="" id="endCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
+                    <output>3</output><br> -->
 
-    <label for="endCol">End column</label><br>
-    <input type="range" value="3" name="" id="endCol" min="0" max="3" oninput="this.nextElementSibling.value = this.value">
-    <output>3</output><br>
+                    <div class="flex-item2">
+                        <label for="targetSum">Sum</label><br>
+                        <input type="tel" name="" id="targetSum" placeholder="" class="target">
+                        <br>
+                    </div>
+                </div>
 
-    <label for="targetSum">Sum</label><br>
-    <input type="tel" name="" id="targetSum" placeholder="" class="target">
-    <br><br>
+                <div class="flex-item2">
+                    <br>
+                    <button id="click-btn" class="startButton" pys-onClick="handle_click">Start solving</button>
+                    <py-script src="./solver.py"></py-script>
+                </div>
+            </div>
+        </div>
 
-    <button id="click-btn" class="startButton" pys-onClick="handle_click">Start solving</button>
-    <py-script src="./solver.py"></py-script>
+        <div class="flex-item1">
+            <table id="outputTable">
+                <label for="outputTable">Output path:</label>
+                <tr>
+                    <td id="o1" class="outputBox"></td>
+                    <td id="o2" class="outputBox"></td>
+                    <td id="o3" class="outputBox"></td>
+                    <td id="o4" class="outputBox"></td>
+                </tr>
+                <tr>
+                    <td id="o5" class="outputBox"></td>
+                    <td id="o6" class="outputBox"></td>
+                    <td id="o7" class="outputBox"></td>
+                    <td id="o8" class="outputBox"></td>
+                </tr>
+                <tr>
+                    <td id="o9" class="outputBox"></td>
+                    <td id="o10" class="outputBox"></td>
+                    <td id="o11" class="outputBox"></td>
+                    <td id="o12" class="outputBox"></td>
+                </tr>
+                <tr>
+                    <td id="o13" class="outputBox"></td>
+                    <td id="o14" class="outputBox"></td>
+                    <td id="o15" class="outputBox"></td>
+                    <td id="o16" class="outputBox"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
     <br>
-
-    <table>
-        <label for="">Output path:</label>
-        <tr>
-            <td id="o1" class="outputBox"></td>
-            <td id="o2" class="outputBox"></td>
-            <td id="o3" class="outputBox"></td>
-            <td id="o4" class="outputBox"></td>
-        </tr>
-        <tr>
-            <td id="o5" class="outputBox"></td>
-            <td id="o6" class="outputBox"></td>
-            <td id="o7" class="outputBox"></td>
-            <td id="o8" class="outputBox"></td>
-        </tr>
-        <tr>
-            <td id="o9" class="outputBox"></td>
-            <td id="o10" class="outputBox"></td>
-            <td id="o11" class="outputBox"></td>
-            <td id="o12" class="outputBox"></td>
-        </tr>
-        <tr>
-            <td id="o13" class="outputBox"></td>
-            <td id="o14" class="outputBox"></td>
-            <td id="o15" class="outputBox"></td>
-            <td id="o16" class="outputBox"></td>
-        </tr>
-    </table>
-    <br>
-
     <div id="inputGrid" class="txt"></div>
-    <div id="solveStatus"></div>
+    <div id="solveStatus" class="txt"></div>
     <div id="finalGrid" class="txt"></div>
 
     
